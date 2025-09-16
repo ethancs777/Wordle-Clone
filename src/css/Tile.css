@@ -1,22 +1,63 @@
-.tile{
-    width: 40px;
-    height: 40px;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    text-transform: uppercase;
-    margin: 5px;
+.tile {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 5px;
+  perspective: 400px;
+  position: relative;
 }
 
-.letter{
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    text-align: center;
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
+.tile-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.tile-inner.flipping,
+.tile-inner.back {
+  transform: rotateY(180deg);
+}
+
+.tile-front,
+.tile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.tile-front {
+  z-index: 2;
+  background: transparent;
+}
+
+.tile-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.tile .letter {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

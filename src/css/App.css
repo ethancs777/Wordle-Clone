@@ -16,3 +16,50 @@
   background-color: limegreen;
   color: white;
 }
+h1 {
+  top: 0;
+  font-weight: 900;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  margin-top: 0;
+  -webkit-text-stroke: 2px white;
+}
+.green { color: #27ae60; }
+.yellow { color: #ffe600; }
+.gray { color: #888888; }
+
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-modal {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 2rem 2.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.help-modal ul {
+  text-align: left;
+  padding-left: 1.5em;
+}
+
+.help-modal li {
+  text-align: left;
+  margin-bottom: 0.5em;
+}
