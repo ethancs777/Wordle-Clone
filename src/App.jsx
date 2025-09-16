@@ -85,7 +85,13 @@ function App() {
             return;
           }
           if (activeRow < 5) {
-            setActiveRow(activeRow + 1);
+            setActiveRow(prev => {
+              const nextRow = prev + 1;
+              setTimeout(() => {
+                inputRefs.current[nextRow][0]?.current?.focus();
+              }, 10);
+              return nextRow;
+            });
           } else {
             alert('Game Over');
           }

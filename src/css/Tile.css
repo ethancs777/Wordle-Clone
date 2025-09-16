@@ -61,3 +61,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.tile-back .letter {
+  color: black;
+}
